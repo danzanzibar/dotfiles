@@ -137,13 +137,9 @@ else
     hc keybind XF86MonBrightnessDown spawn brightnessctl -d nvidia_0 set 5%-
 fi
 
-if [[ "$HOSTNAME" = 'desktop' ]]; then
-    hc keybind XF86TouchpadOff spawn pactl set-sink-volume @DEFAULT_SINK@ +5%
-    hc keybind XF86TouchpadOn spawn pactl set-sink-volume @DEFAULT_SINK@ -5%
-else
-    hc keybind XF86AudioRaiseVolume spawn pactl set-sink-volume @DEFAULT_SINK@ +5%
-    hc keybind XF86AudioLowerVolume spawn pactl set-sink-volume @DEFAULT_SINK@ -5%
-fi
+hc keybind XF86AudioRaiseVolume spawn pactl set-sink-volume @DEFAULT_SINK@ +5%
+hc keybind XF86AudioLowerVolume spawn pactl set-sink-volume @DEFAULT_SINK@ -5%
+
 hc keybind XF86AudioMute spawn pactl set-sink-mute @DEFAULT_SINK@ togglefd
 
 # theme
@@ -219,7 +215,13 @@ hc unlock
 # or simply:
 # hc detect_monitors
 
-autorandr --change
+if [[ $HOSTNAME = "desktop" ]]
+then
+    xrandr --output DisplayPort-0 --pos 0x1080 --output DisplayPort-1 --pos 2560x1080 --output DisplayPort-2 --mode 1920x1080 --pos 1600x0
+else
+    autorandr --change
+fi
+
 hc detect_monitors
 
 # Start Zan's other GUI progams
