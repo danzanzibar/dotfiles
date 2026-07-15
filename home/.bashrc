@@ -155,6 +155,9 @@ export WORKON_HOME=~/sync/.venvs/
 # Setting XDG environment variable
 export XDG_CONFIG_HOME=~/.config/
 
+# Set pass password store.
+export PASSWORD_STORE_DIR=~/sync/.password-store
+
 source-if-exists ~/dotfiles/aliases 
 source-if-exists ~/sync/scripts/lib/bash/python-venv
 source-if-exists ~/sync/scripts/lib/bash/wifi 
