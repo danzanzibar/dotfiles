@@ -158,6 +158,9 @@ export XDG_CONFIG_HOME=~/.config/
 # Set pass password store.
 export PASSWORD_STORE_DIR=~/sync/.password-store
 
+# Set for gpg-agent.
+export GPG_TTY=$(tty)
+
 source-if-exists ~/dotfiles/aliases 
 source-if-exists ~/sync/scripts/lib/bash/python-venv
 source-if-exists ~/sync/scripts/lib/bash/wifi 
