@@ -160,6 +160,8 @@ export PASSWORD_STORE_DIR=~/sync/.password-store
 
 # Set for gpg-agent.
 export GPG_TTY=$(tty)
+export SSH_AGENT_PID=""
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 
 source-if-exists ~/dotfiles/aliases 
 source-if-exists ~/sync/scripts/lib/bash/python-venv
