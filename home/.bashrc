@@ -156,7 +156,7 @@ export WORKON_HOME=~/sync/.venvs/
 export XDG_CONFIG_HOME=~/.config/
 
 # Set pass password store.
-export PASSWORD_STORE_DIR=~/.password-store
+export PASSWORD_STORE_DIR=~/sync/.password-store
 
 # Set for gpg-agent.
 export GPG_TTY=$(tty)
